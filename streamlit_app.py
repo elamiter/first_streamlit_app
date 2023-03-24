@@ -38,9 +38,6 @@ try:
 except URLError as e:
     streamlit.error()
 
-
-
-streamlit.stop()
 streamlit.header('The fruit load list contains:')
 
 def get_fruit_load_list():
@@ -51,6 +48,8 @@ def get_fruit_load_list():
 if streamlit.button('Get Fruit Load List'):
    my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
    streamlit.dataframe(get_fruit_load_list())
+    
+streamlit.stop()
 
 add_my_fruits = streamlit.multiselect("Would you like to add friuts?", list(my_fruit_list.index))
 my_string = ', '.join(map(str,add_my_fruits))
