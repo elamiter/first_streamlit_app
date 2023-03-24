@@ -43,3 +43,4 @@ if fruits_selected1 != []:
    fruits_to_show = my_fruit_list.loc[fruits_selected1]
    streamlit.dataframe(fruits_to_show)
 
+ my_cur.execute('insert into fruit_load_list values('from streamlit')')
