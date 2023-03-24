@@ -38,7 +38,7 @@ streamlit.dataframe(my_data_rows)
 
 fruits_selected1 = streamlit.multiselect("Would you like to add friuts?", list(my_fruit_list.index))
 if str(fruits_selected1) != []:
-  streamlit.text('Thanks for adding: '+ str(fruits_selected1))
-  fruits_to_show = my_fruit_list.loc[fruits_selected1]
-  streamlit.dataframe(fruits_to_show)
+   streamlit.text('Thanks for adding: '+ str(fruits_selected1))
+   fruits_to_show = my_fruit_list.loc[fruits_selected1]
+   streamlit.dataframe(fruits_to_show)
 
