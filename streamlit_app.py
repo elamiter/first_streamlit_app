@@ -36,11 +36,7 @@ my_data_rows = my_cur.fetchall()
 streamlit.header('The Fruit list contains: ')
 streamlit.dataframe(my_data_rows)
 
-fruits_selected1 = streamlit.multiselect("Would you like to add friuts?", list(my_fruit_list.index))
-if fruits_selected1 != []:
-   for i in range(len(fruits_selected1)):
-       streamlit.text('Thanks for adding: '+ str(fruits_selected1[i]))
-   fruits_to_show = my_fruit_list.loc[fruits_selected1]
-   streamlit.dataframe(fruits_to_show)
+add_my_fruits = streamlit.multiselect("Would you like to add friuts?", list(my_fruit_list.index))
+streamlit.write('Thanks for adding: '+ add_my_fruits)
 
- my_cur.execute("insert into fruit_load_list values('from streamlit')")
+my_cur.execute("insert into fruit_load_list values('from streamlit')")
